@@ -1,0 +1,24 @@
+
+# Ignore VS Folders
+.vs/
+
+# Ignore NCrunch
+*ncrunch*
+
+# Ignore Build Folders
+Debug/
+Release/
+
+# Ignore Build Files
+*.exe
+*.dll
+
+# Ignore Solution Files
+*.sln
+
+# Ignore User Files
+*.user
+*.pubxml
+
+# Ignore Nuget cache files
+*.nuget.*
