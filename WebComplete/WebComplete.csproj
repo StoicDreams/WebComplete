@@ -16,9 +16,12 @@
     <RootNamespace>StoicDreams.WebComplete</RootNamespace>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
     <Copyright>2019 (c) Stoic Dreams</Copyright>
-    <Description>Framework for website development that combines and organizes all Stoic Dreams' libraries to speed up and simplify website development.</Description>
+    <Description>Framework for website development that combines and organizes all Stoic Dreams' server-side libraries to speed up and simplify website development.
+Primarily targeted for use in .NET Core 3.0 websites.
+Being developed for active use in Blazor Server side projects</Description>
     <RepositoryType>GitHub</RepositoryType>
     <PackageTags>Stoic Dreams,Framework,Web,Website</PackageTags>
+    <PackageReleaseNotes>Alpha:  Very early development. Minor encrements may be expected to include breaking changes.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
