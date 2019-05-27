@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     ".NETStandard,Version=v2.1": {
-      "FileProxy/0.0.4": {
+      "FileProxy/0.0.5": {
         "type": "package",
         "compile": {
           "lib/netstandard2.1/FileProxy.dll": {}
@@ -64,15 +64,15 @@
     }
   },
   "libraries": {
-    "FileProxy/0.0.4": {
-      "sha512": "VrRTncxKPfDpHg2j9tV8a1U8ps29yp8M2pNf7DWMHjzEBB+q38cmhKlxs04oQ2kE4CI4su2N+2SKgOlQV3qA8A==",
+    "FileProxy/0.0.5": {
+      "sha512": "9/q107mp+nFi54C68X2waFUJueoU2JfrgAiAVp2x0APtboNe4xiEFuGa7D8g/otSNs5PxvEYMXCAdA7H6RCWwg==",
       "type": "package",
-      "path": "fileproxy/0.0.4",
+      "path": "fileproxy/0.0.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.md",
-        "fileproxy.0.0.4.nupkg.sha512",
+        "fileproxy.0.0.5.nupkg.sha512",
         "fileproxy.nuspec",
         "lib/netstandard2.1/FileProxy.dll"
       ]
@@ -251,7 +251,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.1": [
-      "FileProxy >= 0.0.4",
+      "FileProxy >= 0.0.5",
       "StoicDreamsSerialize >= 0.0.4"
     ]
   },
@@ -261,7 +261,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
-    "version": "0.0.3",
+    "version": "0.0.4",
     "restore": {
       "projectUniqueName": "D:\\Stoic\\GitHub\\Lib\\WebComplete\\WebComplete\\WebComplete.csproj",
       "projectName": "WebComplete",
@@ -308,7 +308,7 @@
         "dependencies": {
           "FileProxy": {
             "target": "Package",
-            "version": "[0.0.4, )"
+            "version": "[0.0.5, )"
           },
           "StoicDreamsSerialize": {
             "target": "Package",
@@ -319,7 +319,10 @@
           "net461"
         ],
         "assetTargetFallback": true,
-        "warn": true
+        "warn": true,
+        "frameworkReferences": [
+          "NETStandard.Library"
+        ]
       }
     }
   }
