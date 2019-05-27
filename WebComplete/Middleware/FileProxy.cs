@@ -1,6 +1,8 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 
 namespace StoicDreams.Middleware
@@ -10,14 +12,14 @@ namespace StoicDreams.Middleware
 	{
 		private readonly RequestDelegate _next;
 		private readonly FileProxy.Service service;
-		private readonly FileProxyOptions options;
+		internal readonly IFileProxyOptions options;
 
-		public FileProxyMiddleware(RequestDelegate next, IOptions<FileProxyOptions> options = null)
+		public FileProxyMiddleware(RequestDelegate next, IFileProxyOptions options)
 		{
 			_next = next;
-			if (options?.Value?.Routes != null)
+			if (options?.Routes != null)
 			{
-				this.options = options.Value;
+				this.options = options;
 				service = FileProxy.Service.StandardService(this.options.Routes);
 			}
 		}
@@ -36,7 +38,12 @@ namespace StoicDreams.Middleware
 		}
 	}
 
-	public class FileProxyOptions
+	public interface IFileProxyOptions
+	{
+		FileProxy.Interface.IRoute[] Routes { get; set; }
+	}
+
+	public class FileProxyOptions : IFileProxyOptions
 	{
 		public FileProxy.Interface.IRoute[] Routes { get; set; }
 	}
@@ -44,9 +51,17 @@ namespace StoicDreams.Middleware
 	// Extension method used to add the middleware to the HTTP request pipeline.
 	public static class FileProxyMiddlewareExtensions
 	{
-		public static IApplicationBuilder UseFileProxy(this IApplicationBuilder builder, FileProxyOptions options = null)
+		public static IApplicationBuilder UseFileProxy(this IApplicationBuilder builder)
 		{
-			return builder.UseMiddleware<FileProxyMiddleware>(Options.Create(options));
+			return builder.UseMiddleware<FileProxyMiddleware>();
 		}
+
+		public static void AddFileProxyOptions(this IServiceCollection services, Action<IFileProxyOptions> setupOptions)
+		{
+			IFileProxyOptions options = new FileProxyOptions();
+			setupOptions(options);
+			services.AddSingleton(options);
+		}
+
 	}
 }
