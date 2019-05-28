@@ -12,15 +12,13 @@ namespace StoicDreams.Middleware
 	{
 		private readonly RequestDelegate _next;
 		private readonly FileProxy.Service service;
-		internal readonly IFileProxyOptions options;
 
 		public FileProxyMiddleware(RequestDelegate next, IFileProxyOptions options)
 		{
 			_next = next;
 			if (options?.Routes != null)
 			{
-				this.options = options;
-				service = FileProxy.Service.StandardService(this.options.Routes);
+				service = FileProxy.Service.StandardService(options.Routes);
 			}
 		}
 

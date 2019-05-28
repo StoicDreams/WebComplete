@@ -2834,7 +2834,7 @@
           "build/netcoreapp1.0/xunit.runner.visualstudio.props": {}
         }
       },
-      "WebComplete/0.0.6": {
+      "WebComplete/0.0.7": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
@@ -8574,7 +8574,7 @@
         "xunit.runner.visualstudio.nuspec"
       ]
     },
-    "WebComplete/0.0.6": {
+    "WebComplete/0.0.7": {
       "type": "project",
       "path": "../WebComplete/WebComplete.csproj",
       "msbuildProject": "../WebComplete/WebComplete.csproj"
@@ -8585,7 +8585,7 @@
       "Microsoft.AspNetCore.TestHost >= 2.2.0",
       "Microsoft.NET.Test.Sdk >= 16.1.0",
       "Microsoft.NETCore.Platforms >= 3.0.0-preview5.19224.8",
-      "WebComplete >= 0.0.6",
+      "WebComplete >= 0.0.7",
       "xunit >= 2.4.1",
       "xunit.runner.visualstudio >= 2.4.1"
     ]

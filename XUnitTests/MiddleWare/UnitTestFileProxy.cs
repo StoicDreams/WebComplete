@@ -3,14 +3,14 @@ using Microsoft.AspNetCore.TestHost;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Builder;
-using StoicDreams.Middleware;
+using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
-using System.IO;
 using StoicDreams.FileProxy.Interface;
 using StoicDreams.FileProxy.Routing;
+using StoicDreams.Middleware;
 
-namespace XUnitTests
+namespace XUnitTests.MiddleWare
 {
 	public class UnitTestFileProxy
 	{
