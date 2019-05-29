@@ -17,7 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\WebComplete\WebShared.csproj" />
     <ProjectReference Include="..\WebServer\WebServer.csproj" />
     <ProjectReference Include="..\WebShared\WebShared.csproj" />
   </ItemGroup>

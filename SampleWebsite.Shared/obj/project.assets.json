@@ -51,6 +51,22 @@
         "compile": {
           "ref/netstandard1.5/System.Runtime.dll": {}
         }
+      },
+      "StoicDreamsWebShared/0.0.10": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "StoicDreamsSerialize": "0.0.4"
+        },
+        "compile": {
+          "bin/placeholder/StoicDreamsWebShared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StoicDreamsWebShared.dll": {}
+        },
+        "frameworkReferences": [
+          "NETStandard.Library"
+        ]
       }
     }
   },
@@ -61,6 +77,7 @@
       "path": "microsoft.netcore.platforms/1.1.1",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
@@ -225,11 +242,16 @@
         "system.runtime.4.3.1.nupkg.sha512",
         "system.runtime.nuspec"
       ]
+    },
+    "StoicDreamsWebShared/0.0.10": {
+      "type": "project",
+      "path": "../WebShared/WebShared.csproj",
+      "msbuildProject": "../WebShared/WebShared.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.1": [
-      "StoicDreamsSerialize >= 0.0.4"
+      "StoicDreamsWebShared >= 0.0.10"
     ]
   },
   "packageFolders": {
@@ -238,13 +260,13 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
-    "version": "0.0.10",
+    "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Stoic\\GitHub\\Lib\\WebComplete\\WebShared\\WebShared.csproj",
-      "projectName": "StoicDreamsWebShared",
-      "projectPath": "D:\\Stoic\\GitHub\\Lib\\WebComplete\\WebShared\\WebShared.csproj",
+      "projectUniqueName": "D:\\Stoic\\GitHub\\Lib\\WebComplete\\SampleWebsite.Shared\\SampleWebsite.Shared.csproj",
+      "projectName": "SampleWebsite.Shared",
+      "projectPath": "D:\\Stoic\\GitHub\\Lib\\WebComplete\\SampleWebsite.Shared\\SampleWebsite.Shared.csproj",
       "packagesPath": "C:\\Users\\erikg\\.nuget\\packages\\",
-      "outputPath": "D:\\Stoic\\GitHub\\Lib\\WebComplete\\WebShared\\obj\\",
+      "outputPath": "D:\\Stoic\\GitHub\\Lib\\WebComplete\\SampleWebsite.Shared\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -271,7 +293,11 @@
       },
       "frameworks": {
         "netstandard2.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Stoic\\GitHub\\Lib\\WebComplete\\WebShared\\WebShared.csproj": {
+              "projectPath": "D:\\Stoic\\GitHub\\Lib\\WebComplete\\WebShared\\WebShared.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -282,12 +308,6 @@
     },
     "frameworks": {
       "netstandard2.1": {
-        "dependencies": {
-          "StoicDreamsSerialize": {
-            "target": "Package",
-            "version": "[0.0.4, )"
-          }
-        },
         "imports": [
           "net461"
         ],

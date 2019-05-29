@@ -290,7 +290,7 @@
           "lib/netstandard2.0/Microsoft.AspNetCore.Server.IIS.dll": {}
         },
         "build": {
-          "build/netstandard2.0/_._": {}
+          "build/netstandard2.0/Microsoft.AspNetCore.Server.IIS.targets": {}
         }
       },
       "Microsoft.AspNetCore.Server.IISIntegration/2.2.0": {
@@ -317,7 +317,7 @@
           "lib/netstandard2.0/Microsoft.AspNetCore.Server.IISIntegration.dll": {}
         },
         "build": {
-          "build/netstandard2.0/_._": {}
+          "build/netstandard2.0/Microsoft.AspNetCore.Server.IISIntegration.targets": {}
         }
       },
       "Microsoft.AspNetCore.Server.Kestrel/2.2.0": {
@@ -510,7 +510,8 @@
           "lib/netstandard2.0/Microsoft.Extensions.Configuration.UserSecrets.dll": {}
         },
         "build": {
-          "build/netstandard2.0/_._": {}
+          "build/netstandard2.0/Microsoft.Extensions.Configuration.UserSecrets.props": {},
+          "build/netstandard2.0/Microsoft.Extensions.Configuration.UserSecrets.targets": {}
         }
       },
       "Microsoft.Extensions.DependencyInjection/2.2.0": {
@@ -918,12 +919,10 @@
           "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
         }
       },
-      "StoicDreamsWebShared/0.0.8": {
+      "StoicDreamsWebShared/0.0.10": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
-          "FileProxy": "0.0.6",
-          "Microsoft.AspNetCore": "2.2.0",
           "StoicDreamsSerialize": "0.0.4"
         },
         "compile": {
@@ -1649,7 +1648,7 @@
       ]
     },
     "Newtonsoft.Json/12.0.1": {
-      "sha512": "jmVyoEyk0In8r+AObYQyFKVFm7uSRzE0XSHSbEtBJcZDMV6DqJoyB4FLcHwprPVhAh826so0db3DIKXVnpGoPA==",
+      "sha512": "pBR3wCgYWZGiaZDYP+HHYnalVnPJlpP1q55qvVb+adrDHmFMDc1NAKio61xTwftK3Pw5h7TZJPJEEVMd6ty8rg==",
       "type": "package",
       "path": "newtonsoft.json/12.0.1",
       "files": [
@@ -2261,7 +2260,7 @@
         "version.txt"
       ]
     },
-    "StoicDreamsWebShared/0.0.8": {
+    "StoicDreamsWebShared/0.0.10": {
       "type": "project",
       "path": "../WebShared/WebShared.csproj",
       "msbuildProject": "../WebShared/WebShared.csproj"
@@ -2269,8 +2268,10 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.1": [
+      "FileProxy >= 0.0.6",
+      "Microsoft.AspNetCore >= 2.2.0",
       "Microsoft.AspNetCore.Http.Abstractions >= 2.2.0",
-      "StoicDreamsWebShared >= 0.0.8"
+      "StoicDreamsWebShared >= 0.0.10"
     ]
   },
   "packageFolders": {
@@ -2279,7 +2280,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
-    "version": "0.0.8",
+    "version": "0.0.10",
     "restore": {
       "projectUniqueName": "D:\\Stoic\\GitHub\\Lib\\WebComplete\\WebServer\\WebServer.csproj",
       "projectName": "StoicDreamsWebServer",
@@ -2328,6 +2329,14 @@
     "frameworks": {
       "netstandard2.1": {
         "dependencies": {
+          "FileProxy": {
+            "target": "Package",
+            "version": "[0.0.6, )"
+          },
+          "Microsoft.AspNetCore": {
+            "target": "Package",
+            "version": "[2.2.0, )"
+          },
           "Microsoft.AspNetCore.Http.Abstractions": {
             "target": "Package",
             "version": "[2.2.0, )"
