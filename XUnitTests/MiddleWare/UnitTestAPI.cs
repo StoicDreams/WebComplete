@@ -7,6 +7,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using StoicDreams.Middleware;
 using System.Collections.Generic;
+using StoicDreams.Catalog;
 
 namespace XUnitTests.MiddleWare
 {
@@ -45,7 +46,7 @@ namespace XUnitTests.MiddleWare
 					options.OnAPICall = async context => {
 						APIResponse response = new APIResponse()
 						{
-							Result = StoicDreams.Catalog.APIResult.Success
+							Result = APIResult.Success
 						};
 						return response;
 					};
@@ -65,7 +66,7 @@ namespace XUnitTests.MiddleWare
 					options.OnAPICall = async context => {
 						APIResponse response = new APIResponse()
 						{
-							Result = StoicDreams.Catalog.APIResult.Success,
+							Result = APIResult.Success,
 							Data = new Dictionary<string, object>[] {
 								new Dictionary<string, object>()
 								{

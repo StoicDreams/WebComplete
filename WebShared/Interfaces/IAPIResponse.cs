@@ -3,11 +3,11 @@ using Newtonsoft.Json;
 
 namespace StoicDreams.Interfaces
 {
-	public interface IAPIResponse
+	public interface IAPIResponse<T>
 	{
 		APIResult Result { get; set; }
 		[JsonProperty(NullValueHandling= NullValueHandling.Ignore)]
-		object Data { get; set; }
+		T Data { get; set; }
 		[JsonIgnore]
 		int StatusCode { get; set; }
 	}
