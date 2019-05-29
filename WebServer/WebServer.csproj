@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Authors>Erik Gassler</Authors>
+    <Company>Stoic Dreams</Company>
+    <Product>Stoic Dreams Web Server</Product>
+    <Copyright>2019 (c) Stoic Dreams</Copyright>
+    <Description>Server components of Web Framework for website development that combines and organizes all Stoic Dreams' libraries to speed up and simplify website development.
+Primarily targeted for use in .NET Core 3.0 websites.
+Being developed for active use in Blazor Server side projects</Description>
+    <Version>0.0.8</Version>
+    <RootNamespace>StoicDreams</RootNamespace>
+    <ApplicationIcon>Logo.ico</ApplicationIcon>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/StoicDreams/WebComplete</PackageProjectUrl>
+    <PackageIconUrl>https://www.myfi.ws/img/sd/logoT600.png</PackageIconUrl>
+    <RepositoryUrl>https://github.com/StoicDreams/WebComplete</RepositoryUrl>
+    <RepositoryType>GitHub</RepositoryType>
+    <PackageTags>Stoic Dreams,Framework,Web,Website</PackageTags>
+    <PackageReleaseNotes>Alpha:  Very early development. Minor encrements may be expected to include breaking changes.</PackageReleaseNotes>
+    <PackageId>StoicDreamsWebServer</PackageId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WebShared\WebShared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\Docs\LICENSE.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+  </ItemGroup>
+
+</Project>

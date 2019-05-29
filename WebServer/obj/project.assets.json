@@ -290,7 +290,7 @@
           "lib/netstandard2.0/Microsoft.AspNetCore.Server.IIS.dll": {}
         },
         "build": {
-          "build/netstandard2.0/Microsoft.AspNetCore.Server.IIS.targets": {}
+          "build/netstandard2.0/_._": {}
         }
       },
       "Microsoft.AspNetCore.Server.IISIntegration/2.2.0": {
@@ -317,7 +317,7 @@
           "lib/netstandard2.0/Microsoft.AspNetCore.Server.IISIntegration.dll": {}
         },
         "build": {
-          "build/netstandard2.0/Microsoft.AspNetCore.Server.IISIntegration.targets": {}
+          "build/netstandard2.0/_._": {}
         }
       },
       "Microsoft.AspNetCore.Server.Kestrel/2.2.0": {
@@ -510,8 +510,7 @@
           "lib/netstandard2.0/Microsoft.Extensions.Configuration.UserSecrets.dll": {}
         },
         "build": {
-          "build/netstandard2.0/Microsoft.Extensions.Configuration.UserSecrets.props": {},
-          "build/netstandard2.0/Microsoft.Extensions.Configuration.UserSecrets.targets": {}
+          "build/netstandard2.0/_._": {}
         }
       },
       "Microsoft.Extensions.DependencyInjection/2.2.0": {
@@ -918,6 +917,24 @@
         "runtime": {
           "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
         }
+      },
+      "StoicDreamsWebShared/0.0.8": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "FileProxy": "0.0.6",
+          "Microsoft.AspNetCore": "2.2.0",
+          "StoicDreamsSerialize": "0.0.4"
+        },
+        "compile": {
+          "bin/placeholder/StoicDreamsWebShared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StoicDreamsWebShared.dll": {}
+        },
+        "frameworkReferences": [
+          "NETStandard.Library"
+        ]
       }
     }
   },
@@ -2243,14 +2260,17 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "StoicDreamsWebShared/0.0.8": {
+      "type": "project",
+      "path": "../WebShared/WebShared.csproj",
+      "msbuildProject": "../WebShared/WebShared.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.1": [
-      "FileProxy >= 0.0.6",
-      "Microsoft.AspNetCore >= 2.2.0",
       "Microsoft.AspNetCore.Http.Abstractions >= 2.2.0",
-      "StoicDreamsSerialize >= 0.0.4"
+      "StoicDreamsWebShared >= 0.0.8"
     ]
   },
   "packageFolders": {
@@ -2259,13 +2279,13 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
-    "version": "0.0.7",
+    "version": "0.0.8",
     "restore": {
-      "projectUniqueName": "D:\\Stoic\\GitHub\\Lib\\WebComplete\\WebComplete\\WebComplete.csproj",
-      "projectName": "WebComplete",
-      "projectPath": "D:\\Stoic\\GitHub\\Lib\\WebComplete\\WebComplete\\WebComplete.csproj",
+      "projectUniqueName": "D:\\Stoic\\GitHub\\Lib\\WebComplete\\WebServer\\WebServer.csproj",
+      "projectName": "StoicDreamsWebServer",
+      "projectPath": "D:\\Stoic\\GitHub\\Lib\\WebComplete\\WebServer\\WebServer.csproj",
       "packagesPath": "C:\\Users\\erikg\\.nuget\\packages\\",
-      "outputPath": "D:\\Stoic\\GitHub\\Lib\\WebComplete\\WebComplete\\obj\\",
+      "outputPath": "D:\\Stoic\\GitHub\\Lib\\WebComplete\\WebServer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -2292,7 +2312,11 @@
       },
       "frameworks": {
         "netstandard2.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Stoic\\GitHub\\Lib\\WebComplete\\WebShared\\WebShared.csproj": {
+              "projectPath": "D:\\Stoic\\GitHub\\Lib\\WebComplete\\WebShared\\WebShared.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -2304,21 +2328,9 @@
     "frameworks": {
       "netstandard2.1": {
         "dependencies": {
-          "FileProxy": {
-            "target": "Package",
-            "version": "[0.0.6, )"
-          },
-          "Microsoft.AspNetCore": {
-            "target": "Package",
-            "version": "[2.2.0, )"
-          },
           "Microsoft.AspNetCore.Http.Abstractions": {
             "target": "Package",
             "version": "[2.2.0, )"
-          },
-          "StoicDreamsSerialize": {
-            "target": "Package",
-            "version": "[0.0.4, )"
           }
         },
         "imports": [

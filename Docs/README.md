@@ -8,11 +8,11 @@ This framework is in very early development, with features expected to change fr
 
 ## Getting Startet - [Nuget.org](https://www.nuget.org/packages/WebComplete)
 
-This framework is available for projects via its [Nuget package](https://www.nuget.org/packages/WebComplete).
+This framework is available for projects via its [Nuget package](https://www.nuget.org/packages/StoicDreamsWebServer).
 
 This framework should be compatible with any .NET Core 3.0 or .NET Standard 2.1 project. But it is being specifically designed to be used in Blazor projects.
 
-For Blazor projects, we recommend installing in the Shared project. Though keep in mind that not all framework features will work in Client projects (e.g. Middleware).
+For Blazor projects, install [Stoic Dreams Web Server](https://www.nuget.org/packages/StoicDreamsWebServer) in your Blazor Server project. Then install [Stoic Dreams Web Shared](https://www.nuget.org/packages/StoicDreamsWebShared) in your Blazor Shared project.
 
 We are also rebuilding our website [HatchMyWeb.com](https://www.hatchmyweb.com) to host tutorials and code samples to help anyone interested in using this framework or any of our other libraries.
 
