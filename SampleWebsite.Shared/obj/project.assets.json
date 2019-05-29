@@ -52,7 +52,7 @@
           "ref/netstandard1.5/System.Runtime.dll": {}
         }
       },
-      "StoicDreamsWebShared/0.0.10": {
+      "StoicDreamsWebShared/0.0.11": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
@@ -243,7 +243,7 @@
         "system.runtime.nuspec"
       ]
     },
-    "StoicDreamsWebShared/0.0.10": {
+    "StoicDreamsWebShared/0.0.11": {
       "type": "project",
       "path": "../WebShared/WebShared.csproj",
       "msbuildProject": "../WebShared/WebShared.csproj"
@@ -251,7 +251,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.1": [
-      "StoicDreamsWebShared >= 0.0.10"
+      "StoicDreamsWebShared >= 0.0.11"
     ]
   },
   "packageFolders": {

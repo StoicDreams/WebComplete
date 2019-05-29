@@ -874,7 +874,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
-          "StoicDreamsWebShared": "0.0.10"
+          "StoicDreamsWebShared": "0.0.11"
         },
         "compile": {
           "bin/placeholder/SampleWebsite.Shared.dll": {}
@@ -886,7 +886,7 @@
           "NETStandard.Library"
         ]
       },
-      "StoicDreamsWebShared/0.0.10": {
+      "StoicDreamsWebShared/0.0.11": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
@@ -3092,7 +3092,7 @@
       "path": "../SampleWebsite.Shared/SampleWebsite.Shared.csproj",
       "msbuildProject": "../SampleWebsite.Shared/SampleWebsite.Shared.csproj"
     },
-    "StoicDreamsWebShared/0.0.10": {
+    "StoicDreamsWebShared/0.0.11": {
       "type": "project",
       "path": "../WebShared/WebShared.csproj",
       "msbuildProject": "../WebShared/WebShared.csproj"

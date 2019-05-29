@@ -35,7 +35,12 @@ namespace XUnitTests.MiddleWare
 			var testServer = new TestServer(builder);
 			HttpClient client = testServer.CreateClient();
 			HttpResponseMessage response = await client.GetAsync("/api/test");
-			Assert.Equal(@"{""Result"":1,""Data"":[{""Foo"":""Bar""}]}", await response.Content.ReadAsStringAsync());
+			Assert.Equal(@"{""Result"":1,""Data"":{""Foo"":""Bar""}}", await response.Content.ReadAsStringAsync());
+		}
+
+		public class TestData : object
+		{
+			public string Foo = "Bar";
 		}
 
 		public class TestStartup
@@ -44,7 +49,7 @@ namespace XUnitTests.MiddleWare
 			{
 				services.AddAPIOptions(options => {
 					options.OnAPICall = async context => {
-						APIResponse response = new APIResponse()
+						APIResponse<object> response = new APIResponse<object>()
 						{
 							Result = APIResult.Success
 						};
@@ -64,15 +69,10 @@ namespace XUnitTests.MiddleWare
 			{
 				services.AddAPIOptions(options => {
 					options.OnAPICall = async context => {
-						APIResponse response = new APIResponse()
+						APIResponse<object> response = new APIResponse<object>()
 						{
 							Result = APIResult.Success,
-							Data = new Dictionary<string, object>[] {
-								new Dictionary<string, object>()
-								{
-									{"Foo", "Bar" }
-								}
-							}
+							Data = new TestData()
 						};
 						return response;
 					};

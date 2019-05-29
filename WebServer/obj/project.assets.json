@@ -919,7 +919,7 @@
           "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
         }
       },
-      "StoicDreamsWebShared/0.0.10": {
+      "StoicDreamsWebShared/0.0.11": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
@@ -2260,7 +2260,7 @@
         "version.txt"
       ]
     },
-    "StoicDreamsWebShared/0.0.10": {
+    "StoicDreamsWebShared/0.0.11": {
       "type": "project",
       "path": "../WebShared/WebShared.csproj",
       "msbuildProject": "../WebShared/WebShared.csproj"
@@ -2271,7 +2271,7 @@
       "FileProxy >= 0.0.6",
       "Microsoft.AspNetCore >= 2.2.0",
       "Microsoft.AspNetCore.Http.Abstractions >= 2.2.0",
-      "StoicDreamsWebShared >= 0.0.10"
+      "StoicDreamsWebShared >= 0.0.11"
     ]
   },
   "packageFolders": {
@@ -2280,7 +2280,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
-    "version": "0.0.10",
+    "version": "0.0.11",
     "restore": {
       "projectUniqueName": "D:\\Stoic\\GitHub\\Lib\\WebComplete\\WebServer\\WebServer.csproj",
       "projectName": "StoicDreamsWebServer",

@@ -1,4 +1,5 @@
-﻿using StoicDreams.Interfaces;
+﻿using System;
+using StoicDreams.Interfaces;
 
 namespace StoicDreams.Catalog
 {

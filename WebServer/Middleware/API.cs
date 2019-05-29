@@ -34,7 +34,7 @@ namespace StoicDreams.Middleware
 				await _next(httpContext);
 				return;
 			}
-			IAPIResponse result = await config.OnAPICall(httpContext);
+			IAPIResponse<object> result = await config.OnAPICall(httpContext);
 			httpContext.Response.StatusCode = result.StatusCode;
 			httpContext.Response.ContentType = config.ContentType;
 			JSON serial = new JSON();
@@ -48,7 +48,7 @@ namespace StoicDreams.Middleware
 	{
 		string APIFolder { get; set; }
 		string ContentType { get; set; }
-		Func<HttpContext, Task<IAPIResponse>> OnAPICall { get; set; }
+		Func<HttpContext, Task<IAPIResponse<object>>> OnAPICall { get; set; }
 	}
 
 	public class APIOptions : IAPIOptions
@@ -59,7 +59,7 @@ namespace StoicDreams.Middleware
 		/// Defaults to "application/json".
 		/// </summary>
 		public string ContentType { get; set; } = "application/json";
-		public Func<HttpContext, Task<IAPIResponse>> OnAPICall { get; set; }
+		public Func<HttpContext, Task<IAPIResponse<object>>> OnAPICall { get; set; }
 	}
 
 	// Extension method used to add the middleware to the HTTP request pipeline.
