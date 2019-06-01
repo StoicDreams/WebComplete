@@ -9,7 +9,7 @@
     <Description>Server components of Web Framework for website development that combines and organizes all Stoic Dreams' libraries to speed up and simplify website development.
 Primarily targeted for use in .NET Core 3.0 websites.
 Being developed for active use in Blazor Server side projects</Description>
-    <Version>0.0.12</Version>
+    <Version>0.0.13</Version>
     <RootNamespace>StoicDreams</RootNamespace>
     <ApplicationIcon>Logo.ico</ApplicationIcon>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>

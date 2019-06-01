@@ -34,7 +34,15 @@ namespace StoicDreams.Middleware
 				await _next(httpContext);
 				return;
 			}
-			IAPIResponse<object> result = await config.OnAPICall(httpContext);
+			IAPIResponse<object> result;
+			if (config.OnAPICall != null)
+			{
+				result = config.OnAPICall(httpContext);
+			}
+			else
+			{
+				result = await config.OnAPICallAsync(httpContext);
+			}
 			httpContext.Response.StatusCode = result.StatusCode;
 			httpContext.Response.ContentType = config.ContentType;
 			JSON serial = new JSON();
@@ -48,7 +56,8 @@ namespace StoicDreams.Middleware
 	{
 		string APIFolder { get; set; }
 		string ContentType { get; set; }
-		Func<HttpContext, Task<IAPIResponse<object>>> OnAPICall { get; set; }
+		Func<HttpContext, Task<IAPIResponse<object>>> OnAPICallAsync { get; set; }
+		Func<HttpContext, IAPIResponse<object>> OnAPICall { get; set; }
 	}
 
 	public class APIOptions : IAPIOptions
@@ -59,7 +68,8 @@ namespace StoicDreams.Middleware
 		/// Defaults to "application/json".
 		/// </summary>
 		public string ContentType { get; set; } = "application/json";
-		public Func<HttpContext, Task<IAPIResponse<object>>> OnAPICall { get; set; }
+		public Func<HttpContext, Task<IAPIResponse<object>>> OnAPICallAsync { get; set; }
+		public Func<HttpContext, IAPIResponse<object>> OnAPICall { get; set; }
 	}
 
 	// Extension method used to add the middleware to the HTTP request pipeline.
@@ -75,9 +85,13 @@ namespace StoicDreams.Middleware
 			IAPIOptions options = new APIOptions();
 			setupOptions(options);
 			options.APIFolder = CleanFolderPath(options.APIFolder ?? defaultFolder);
-			if(options.OnAPICall == null)
+			if(options.OnAPICall == null && options.OnAPICallAsync == null)
 			{
-				throw new Exception("APIMiddleware options was not assigned a processing method for OnAPICall.");
+				throw new Exception("APIMiddleware options was not assigned a processing method for OnAPICall or OnAPICallAsync.");
+			}
+			if(options.OnAPICall != null && options.OnAPICallAsync != null)
+			{
+				throw new Exception("APIMiddleware cannot be set with both OnAPICall and OnAPICallAsync.");
 			}
 			services.AddSingleton(options);
 		}

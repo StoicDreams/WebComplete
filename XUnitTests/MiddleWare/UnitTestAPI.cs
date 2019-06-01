@@ -48,7 +48,7 @@ namespace XUnitTests.MiddleWare
 			public void ConfigureServices(IServiceCollection services)
 			{
 				services.AddAPIOptions(options => {
-					options.OnAPICall = async context => {
+					options.OnAPICall = context => {
 						APIResponse<object> response = new APIResponse<object>()
 						{
 							Result = APIResult.Success
@@ -68,7 +68,7 @@ namespace XUnitTests.MiddleWare
 			public void ConfigureServices(IServiceCollection services)
 			{
 				services.AddAPIOptions(options => {
-					options.OnAPICall = async context => {
+					options.OnAPICall = context => {
 						APIResponse<object> response = new APIResponse<object>()
 						{
 							Result = APIResult.Success,
@@ -82,6 +82,29 @@ namespace XUnitTests.MiddleWare
 			{
 				app.UseAPI();
 			}
+		}
+
+		public class TestStartupAsyncWithData
+		{
+			public void ConfigureServices(IServiceCollection services)
+			{
+				services.AddAPIOptions(options => {
+					options.OnAPICallAsync = async context => {
+						await Task.Run(() => { });
+						APIResponse<object> response = new APIResponse<object>()
+						{
+							Result = APIResult.Success,
+							Data = new TestData()
+						};
+						return response;
+					};
+				});
+			}
+			public void Configure(IApplicationBuilder app)
+			{
+				app.UseAPI();
+			}
+
 		}
 	}
 }
