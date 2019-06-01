@@ -8,6 +8,8 @@
 # Ignore Build Folders
 Debug/
 Release/
+bin/
+obj/
 
 # Ignore Build Files
 *.exe
