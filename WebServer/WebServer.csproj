@@ -9,7 +9,7 @@
     <Description>Server components of Web Framework for website development that combines and organizes all Stoic Dreams' libraries to speed up and simplify website development.
 Primarily targeted for use in .NET Core 3.0 websites.
 Being developed for active use in Blazor Server side projects</Description>
-    <Version>0.0.13</Version>
+    <Version>0.0.14</Version>
     <RootNamespace>StoicDreams</RootNamespace>
     <ApplicationIcon>Logo.ico</ApplicationIcon>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -19,7 +19,7 @@ Being developed for active use in Blazor Server side projects</Description>
     <RepositoryUrl>https://github.com/StoicDreams/WebComplete</RepositoryUrl>
     <RepositoryType>GitHub</RepositoryType>
     <PackageTags>Stoic Dreams,Framework,Web,Website</PackageTags>
-    <PackageReleaseNotes>Alpha:  Very early development. Minor encrements may be expected to include breaking changes.</PackageReleaseNotes>
+    <PackageReleaseNotes>Alpha:  Very early development. Minor increments may be expected to include breaking changes.</PackageReleaseNotes>
     <PackageId>StoicDreamsWebServer</PackageId>
   </PropertyGroup>
 
@@ -35,7 +35,7 @@ Being developed for active use in Blazor Server side projects</Description>
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="FileProxy" Version="0.0.7" />
+    <PackageReference Include="FileProxy" Version="0.0.8" />
     <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
   </ItemGroup>
