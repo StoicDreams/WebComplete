@@ -9,7 +9,7 @@
     <Description>Server components of Web Framework for website development that combines and organizes all Stoic Dreams' libraries to speed up and simplify website development.
 Primarily targeted for use in .NET Core 3.0 websites.
 Being developed for active use in Blazor Server side projects</Description>
-    <Version>0.0.14</Version>
+    <Version>0.0.15</Version>
     <RootNamespace>StoicDreams</RootNamespace>
     <ApplicationIcon>Logo.ico</ApplicationIcon>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -38,6 +38,7 @@ Being developed for active use in Blazor Server side projects</Description>
     <PackageReference Include="FileProxy" Version="0.0.8" />
     <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="StoicDreamsSerialize" Version="0.0.5" />
   </ItemGroup>
 
 </Project>
