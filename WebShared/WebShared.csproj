@@ -1,39 +1,40 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<RepositoryUrl>https://github.com/StoicDreams/WebComplete</RepositoryUrl>
+		<PackageIconUrl>https://www.myfi.ws/img/sd/logoT600.png</PackageIconUrl>
+		<AssemblyVersion>0.0.16.0</AssemblyVersion>
+		<FileVersion>0.0.16.0</FileVersion>
+		<Version>0.0.16</Version>
+		<Authors>Erik Gassler</Authors>
+		<Company>Stoic Dreams</Company>
+		<Product>Stoic Dreams Web Complete</Product>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<PackageProjectUrl>https://github.com/StoicDreams/WebComplete</PackageProjectUrl>
+		<ApplicationIcon>Logo.ico</ApplicationIcon>
+		<RootNamespace>StoicDreams</RootNamespace>
+		<PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+		<Copyright>2019 (c) Stoic Dreams</Copyright>
+		<Description>
+			Core part of Web Framework for website development that combines and organizes all Stoic Dreams' libraries to speed up and simplify website development.
+			Primarily targeted for use in .NET Core 3.0 websites.
+			Being developed for active use in Blazor Server side projects
+		</Description>
+		<RepositoryType>GitHub</RepositoryType>
+		<PackageTags>Stoic Dreams,Framework,Web,Website</PackageTags>
+		<PackageReleaseNotes>Alpha:  Very early development. Minor encrements may be expected to include breaking changes.</PackageReleaseNotes>
+		<PackageId>StoicDreams.WebShared</PackageId>
+	</PropertyGroup>
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
-    <RepositoryUrl>https://github.com/StoicDreams/WebComplete</RepositoryUrl>
-    <PackageIconUrl>https://www.myfi.ws/img/sd/logoT600.png</PackageIconUrl>
-    <AssemblyVersion>0.0.15.0</AssemblyVersion>
-    <FileVersion>0.0.15.0</FileVersion>
-    <Version>0.0.15</Version>
-    <Authors>Erik Gassler</Authors>
-    <Company>Stoic Dreams</Company>
-    <Product>Stoic Dreams Web Complete</Product>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageProjectUrl>https://github.com/StoicDreams/WebComplete</PackageProjectUrl>
-    <ApplicationIcon>Logo.ico</ApplicationIcon>
-    <RootNamespace>StoicDreams</RootNamespace>
-    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
-    <Copyright>2019 (c) Stoic Dreams</Copyright>
-    <Description>Core part of Web Framework for website development that combines and organizes all Stoic Dreams' libraries to speed up and simplify website development.
-Primarily targeted for use in .NET Core 3.0 websites.
-Being developed for active use in Blazor Server side projects</Description>
-    <RepositoryType>GitHub</RepositoryType>
-    <PackageTags>Stoic Dreams,Framework,Web,Website</PackageTags>
-    <PackageReleaseNotes>Alpha:  Very early development. Minor encrements may be expected to include breaking changes.</PackageReleaseNotes>
-    <PackageId>StoicDreamsWebShared</PackageId>
-  </PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="StoicDreamsSerialize" Version="0.0.6" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="StoicDreamsSerialize" Version="0.0.5" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="..\Docs\LICENSE.md">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-  </ItemGroup>
+	<ItemGroup>
+		<None Include="..\Docs\LICENSE.md">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
+	</ItemGroup>
 
 </Project>

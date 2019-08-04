@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
-using StoicDreams.Serialize;
 
 namespace StoicDreams.Middleware
 {
@@ -22,7 +20,7 @@ namespace StoicDreams.Middleware
 		public async Task InvokeAsync(HttpContext httpContext)
 		{
 			config?.OnRequest?.Invoke(httpContext);
-			if(httpContext.Response.ContentLength == 0)
+			if(httpContext.Response.ContentLength == null || httpContext.Response.ContentLength == 0)
 			{
 				await _next(httpContext);
 			}
